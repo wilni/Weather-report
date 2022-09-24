@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
-import {WeatherCard, coordinates} from './Components/WeatherCard/WeatherCard';
+import {WeatherCard} from './Components/WeatherCard/WeatherCard';
+
 
 
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 
 const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY
-const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 
 const options = [
   { name: "miami" },
@@ -15,9 +15,8 @@ const options = [
 
 
 function App() {
-  const [searchResults, setSearchResults] = useState([])
   const [address, setAddress] = useState("");
-  const [coordinates, setCoordinates] = useState<coordinates>([0,0]);
+  const [coordinates, setCoordinates] = useState([]);
 
   const handleSelect = async (value) => {
     const results = await geocodeByAddress(value)
@@ -26,10 +25,6 @@ function App() {
     setCoordinates([latLng.lat, latLng.lng])
   }
 
-
-  // useEffect(() => {
-
-  // }, [searchResults])
 
   return (
     <div className="App">
@@ -49,7 +44,7 @@ function App() {
               const style = {
                 backgroundColor: s.active? "#ADD8E6": "#f8f8f8"
               }
-              return <div{...getSuggestionItemProps(s, {style})}>
+              return <div key={s.placeId} {...getSuggestionItemProps(s, {style})}>
                  {s.description}
                </div>
             })}
