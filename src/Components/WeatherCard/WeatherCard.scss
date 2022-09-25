@@ -12,6 +12,7 @@
     gap: 2rem;
     position: relative;
     border-radius: 0.5rem;
+    flex-basis: 30%;
 
     &--Clear {
         background: -webkit-linear-gradient(90deg, hsla(32, 86%, 60%, 1) 0%, hsla(40, 97%, 74%, 1) 100%);
@@ -22,12 +23,17 @@
         background: -webkit-linear-gradient(90deg, hsla(0, 0%, 96%, 1) 0%, hsla(353, 8%, 79%, 1) 100%);
         color: $dark-gray;
     }
+
     &--Rain {
         background: -webkit-linear-gradient(90deg, hsla(200, 81%, 69%, 1) 0%, hsla(216, 56%, 59%, 1) 100%);
         color: $cream-white;
     }
     &--Thunderstorm {
         background: -webkit-linear-gradient(90deg, hsla(216, 23%, 76%, 1) 0%, hsla(215, 19%, 51%, 1) 100%);
+        color: $cream-white;
+    }
+    &--night, &--Haze {
+        background: -webkit-linear-gradient(315deg, hsla(227, 13%, 22%, 1) 6%, hsla(221, 13%, 54%, 1) 100%);
         color: $cream-white;
     }
 
