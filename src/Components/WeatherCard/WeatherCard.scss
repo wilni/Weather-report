@@ -2,19 +2,33 @@
 @use '../../partials/breakpoints.scss'as *;
 
 
+
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 2px solid $gray;
     padding: 2rem;
+    gap: 2rem;
+    position: relative;
+    border-radius: 0.5rem;
 
     &--Clear {
         background: -webkit-linear-gradient(90deg, hsla(32, 86%, 60%, 1) 0%, hsla(40, 97%, 74%, 1) 100%);
+        color: $dark-gray
     }
 
     &--Clouds {
+        background: -webkit-linear-gradient(90deg, hsla(0, 0%, 96%, 1) 0%, hsla(353, 8%, 79%, 1) 100%);
+        color: $dark-gray;
+    }
+    &--Rain {
+        background: -webkit-linear-gradient(90deg, hsla(200, 81%, 69%, 1) 0%, hsla(216, 56%, 59%, 1) 100%);
+        color: $cream-white;
+    }
+    &--Thunderstorm {
         background: -webkit-linear-gradient(90deg, hsla(216, 23%, 76%, 1) 0%, hsla(215, 19%, 51%, 1) 100%);
+        color: $cream-white;
     }
 
     &__outlook {
@@ -26,30 +40,61 @@
 
     }
 
-    &__details {
-        height: 10px;
-        width: 100%;
-        background-color: red;
-        display: none;
-    }
-
     &__location {
         font-size: 2rem;
-        color: $dark-gray;
     }
 
     &__temp {
         font-size: 3rem;
-        color: $dark-gray;
+    }
+
+    &__description {
+        font-size: 1.5rem;
     }
 
     &__icon {
         min-height: 5rem;
         min-width: 5rem;
+
+        &--small {
+            min-height: 2rem;
+            min-width: 2rem;
+        }
+    }
+
+    &__sun {
+        display: none;
+
+        &-text {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__delete {
+        font-size: 2rem;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        outline: none;
+        border: none;
+        background:  none;
         color: $dark-gray;
+        &:hover{
+            color: $sharp-red;
+            font-weight: 900;
+        }
     }
 }
 
-.card:hover > .card__details {
-    display: inline-block;
+.card:hover > .card__sun,
+.card:focus > .card__sun {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover,
+.card:focus {
+    border: 2px solid $cream-white;
 }
