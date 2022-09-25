@@ -1,9 +1,15 @@
 @use "./partials/colors.scss" as *;
+@use "./partials/breakpoints.scss" as *;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body, #app, #app>div {
+  height: 100%;
+  background-color: #252525;
 }
 
 
@@ -12,9 +18,12 @@
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  height: 100vh;
-  background-color: #252525;
+  background-size: cover;
+  padding-bottom: 3rem;
+
 }
+
+
 
 .searchbox {
   display: flex;
@@ -42,15 +51,46 @@
   }
 
   &__icon {
-    min-height: 2rem;
-    min-width: 2rem;
     position: absolute;
     color: $white;
-    right: 2rem;
-    top: 2rem;
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+    position: absolute;
+    right: 1.5rem;
+    top: 2.5rem;
+
+    @include tablet {
+      min-height: 2rem;
+      min-width: 2rem;
+      right: 2rem;
+      top: 2rem;
+    }
   }
 }
 
+.card-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  @include tablet {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+}
+
+.loading {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.5rem;
+  color: $cream-white;
+
+  &__text {
+    color: $cream-white;
+  }
+}
 
 
 
