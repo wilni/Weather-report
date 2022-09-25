@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import {WeatherCard} from './Components/WeatherCard/WeatherCard';
+import { FaSearchLocation } from "react-icons/fa";
 
 
 
@@ -35,6 +36,7 @@ function App() {
 
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) =>  (
           <div className='searchbox'>
+            <FaSearchLocation className='searchbox__icon'/>
             <input className='searchbox__input' {...getInputProps({placeholder: "Search for location"})} />
 
             <div className='searchbox__options'>
@@ -42,9 +44,9 @@ function App() {
 
             {suggestions.map(s => {
               const style = {
-                backgroundColor: s.active? "#ADD8E6": "#f8f8f8"
+                backgroundColor: s.active? "#6c757d":  "rgba(92, 92, 92, 0.506)"
               }
-              return <div key={s.placeId} {...getSuggestionItemProps(s, {style})}>
+              return <div className='searchbox__option' key={s.placeId} {...getSuggestionItemProps(s, {style})}>
                  {s.description}
                </div>
             })}

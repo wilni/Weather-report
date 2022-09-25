@@ -1,8 +1,57 @@
+@use "./partials/colors.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 1rem;
   align-items: center;
+  height: 100vh;
+  background-color: #252525;
 }
+
+.searchbox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+
+  &__input {
+    outline: none;
+    border: 1px solid $dark-gray;
+    background-color: $gray;
+    color: $white;
+    padding: 1rem;
+    font-size: 2rem;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+  }
+  &__option {
+    padding: 0.25rem;
+    color: $white;
+  }
+
+  &__icon {
+    min-height: 2rem;
+    min-width: 2rem;
+    position: absolute;
+    color: $white;
+    right: 2rem;
+    top: 2rem;
+  }
+}
+
+
+
 
 
