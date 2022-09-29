@@ -2,6 +2,9 @@
 # Weather-report
 <img width="1430" alt="Screen Shot 2022-09-25 at 2 26 12 PM" src="https://user-images.githubusercontent.com/81815266/192160480-fa4e69a1-d684-478f-b2a9-7a2d644ea79a.png">
 
+<img width="1433" alt="Screen Shot 2022-09-29 at 7 53 32 PM" src="https://user-images.githubusercontent.com/81815266/193161767-03552263-5895-49b8-b386-ee32e77a2995.png">
+
+
 This app allows for location search and autocomplete using google's APIs. 
 When a location is entered a weather card for that location will be added to the page. 
 As many locations as needed may be added. 
